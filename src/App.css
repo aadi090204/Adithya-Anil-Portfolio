@@ -1,0 +1,382 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0f172a;
+  --bg-soft: #111827;
+  --card: #172033;
+  --card-light: #1f2937;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --line: rgba(148, 163, 184, 0.22);
+  --accent: #38bdf8;
+  --accent-2: #a78bfa;
+  --green: #22c55e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 32%),
+    radial-gradient(circle at top right, rgba(167, 139, 250, 0.12), transparent 30%),
+    var(--bg);
+  color: var(--text);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  overflow: hidden;
+}
+
+.navbar {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  font-size: 1.15rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.section {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+  padding: 72px 0;
+}
+
+.hero {
+  min-height: calc(100vh - 80px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) 420px;
+  gap: 42px;
+  align-items: center;
+  padding-top: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 22px;
+  font-size: clamp(2.4rem, 5.4vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+}
+
+h2 {
+  margin-bottom: 14px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: -0.055em;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.hero-text,
+.card p,
+.project-description,
+.contact-section p {
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 1.02rem;
+}
+
+.hero-actions,
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.primary-button,
+.secondary-button,
+.contact-links a {
+  border-radius: 999px;
+  padding: 13px 20px;
+  font-weight: 900;
+  border: 1px solid var(--line);
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #020617;
+  border: none;
+}
+
+.secondary-button,
+.contact-links a {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+.hero-card,
+.card,
+.project-card,
+.stat-card,
+.cert-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025));
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
+}
+
+.hero-card {
+  padding: 32px;
+}
+
+.hero-card p {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.hero-card h2 {
+  font-size: 2rem;
+  line-height: 1.05;
+}
+
+.hero-card ul,
+.timeline-card ul {
+  margin: 22px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.section-heading {
+  margin-bottom: 26px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) 0.8fr;
+  gap: 22px;
+}
+
+.card {
+  padding: 30px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.stat-card {
+  padding: 22px;
+}
+
+.stat-card h3 {
+  color: var(--accent);
+  font-size: 1.35rem;
+}
+
+.stat-card p,
+.muted {
+  color: var(--muted);
+}
+
+.timeline-card {
+  display: grid;
+  gap: 14px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.project-card {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  min-height: 390px;
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.project-top span {
+  color: #020617;
+  background: var(--accent);
+  border-radius: 999px;
+  padding: 7px 11px;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.project-top p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-align: right;
+}
+
+.project-card h3 {
+  font-size: 1.35rem;
+}
+
+.tech-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: auto 0 22px;
+}
+
+.tech-list span,
+.skills-list span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 11px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.035);
+  font-size: 0.85rem;
+}
+
+.project-card a {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.skills-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.skills-list span {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.cert-card {
+  padding: 22px;
+  color: var(--text);
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.contact-section {
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.contact-section .section-heading {
+  margin-bottom: 10px;
+}
+
+.contact-links {
+  justify-content: center;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid,
+  .cert-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .nav-links {
+    display: none;
+  }
+
+  .section {
+    padding: 54px 0;
+  }
+
+  .project-grid,
+  .cert-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    min-height: auto;
+  }
+}
+.role-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 26px 0 0;
+}
+
+.role-badges span {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 999px;
+  padding: 9px 14px;
+  color: #dbeafe;
+  background: rgba(56, 189, 248, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
